@@ -449,7 +449,7 @@ void draw() {
 			image(soldier, soldierX[i], soldierY[i]);
 
 			// Requirement #3: Use boolean isHit(...) to detect collision
-			if( isHit( cabbageX[i] , cabbageY[i] , SOIL_SIZE , SOIL_SIZE, playerX , playerY, SOIL_SIZE , SOIL_SIZE ) ){ 
+			if( isHit( soldierX[i] , soldierY[i] , SOIL_SIZE , SOIL_SIZE, playerX , playerY, SOIL_SIZE , SOIL_SIZE ) ){ 
 				playerHealth --;
 
 				if(playerHealth == 0){
@@ -472,7 +472,7 @@ void draw() {
 
 		// Requirement #6:
 		//   Call drawCaution() to draw caution sign
-    		drawCaution();
+    drawCaution();
 		popMatrix();
 
 		// Depth UI
@@ -641,7 +641,7 @@ void drawCaution(){								// Requirement #6
 		// - Use the returned value from int getEnemyIndexByRow(int row) to get the soldier's position from soldierX/soldierY arrays
 		// - Don't draw anything if int getEnemyIndexByRow(int row) returns -1
   int a = getEnemyIndexByRow( playerRow+5 );
-   // println(a);
+    //println(a);
     if( a != -1 ){
       image( caution , soldierX[a] , soldierY[a]-SOIL_SIZE );
     }
